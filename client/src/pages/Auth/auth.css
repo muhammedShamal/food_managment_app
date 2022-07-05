@@ -1,0 +1,29 @@
+.loginpage {
+  text-align: center;
+  padding: 3rem 0rem;
+
+  min-height: 90vh;
+}
+
+.loginpage-container {
+  padding: 1rem 2rem 1.5rem;
+  animation: pop 0.5s ease-in-out;
+}
+
+.loginpage h4 {
+  margin: 0.5rem 0;
+}
+
+.login-form button {
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.footer h3 {
+  margin-bottom: 0.6rem;
+  color: #484274;
+}

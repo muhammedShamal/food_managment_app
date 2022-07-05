@@ -1,0 +1,8 @@
+.navbar {
+  padding: 0rem 4rem;
+  min-height: 10vh;
+}
+
+.nav-links .btn:hover {
+  transform: translateY(-7px);
+}

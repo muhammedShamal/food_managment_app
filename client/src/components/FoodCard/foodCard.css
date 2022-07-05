@@ -1,0 +1,18 @@
+.food-card {
+  padding: 1rem;
+  width: 300px;
+  height: 180px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.food-card span {
+  font-size: 1.1rem;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+}
