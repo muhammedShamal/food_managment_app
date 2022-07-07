@@ -1,0 +1,9 @@
+.post-form {
+  padding-top: 1rem;
+  min-height: 90vh;
+}
+
+.form-container form {
+  width: 350px;
+  padding: 1rem 2rem;
+}

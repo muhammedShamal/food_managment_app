@@ -6,7 +6,6 @@ const Home = () => {
   const arr = data.filter((el) => {
     return el.price == 0;
   });
-  console.log(arr);
   return (
     <div className="home">
       <h1>Available Foods</h1>

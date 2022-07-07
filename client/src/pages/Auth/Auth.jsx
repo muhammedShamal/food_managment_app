@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signup, signin } from "../../actions/auth";
 import "./auth.css";
 
 const initialState = {
@@ -12,12 +15,19 @@ const initialState = {
 export default function Auth() {
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState(initialState);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // custome userpic
   // https://avatars.dicebear.com/api/initials/happy.svg
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isSignup) {
+      dispatch(signup(formData, navigate));
+    } else {
+      dispatch(signin(formData, navigate));
+    }
   };
 
   const handleChange = (e) => {

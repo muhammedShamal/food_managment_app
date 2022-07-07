@@ -18,8 +18,8 @@ const postSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    district: {
-      type: Array,
+    location: {
+      type: String,
       required: true,
     },
   },
