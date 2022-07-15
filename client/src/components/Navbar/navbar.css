@@ -1,10 +1,19 @@
 .navbar {
-  padding: 0rem 4rem;
-  min-height: 10vh;
+  padding: 1rem 6rem;
+  /* min-height: 10vh; */
+  background: transparent;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-links .btn:hover {
   transform: translateY(-7px);
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
 .user-pic {

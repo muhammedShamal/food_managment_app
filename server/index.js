@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import postRoute from "./routes/posts.js";
 import userRoute from "./routes/users.js";
+import orderRoute from "./routes/order.js";
 
 const app = express();
 dotenv.config();
@@ -13,12 +14,13 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use("/posts", postRoute);
-app.use("/user", userRoute);
-
 app.get("/", (req, res) => {
   res.send("Helo to my cake shop");
 });
+
+app.use("/users", userRoute);
+app.use("/posts", postRoute);
+app.use("/order", orderRoute);
 
 const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./foodCard.css";
 
 const FoodCard = ({ food }) => {
@@ -11,6 +12,9 @@ const FoodCard = ({ food }) => {
       ) : (
         <span>Price : {food.price}</span>
       )}
+      <Link to={`/order/${food._id}`}>
+        <button className="btn">Place Order</button>
+      </Link>
     </div>
   );
 };

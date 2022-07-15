@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createNewPost } from "../../actions/posts";
+import { useNavigate } from "react-router-dom";
+import { createPost } from "../../redux/features/postSlice";
 import "./postForm.css";
 
 const PostForm = () => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("profile"));
+  console.log(user.result._id);
+
   const [post, setPost] = useState({
+    userId: user.result._id,
     name: "",
     price: 0,
     quantity: 0,
@@ -16,13 +22,11 @@ const PostForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(createNewPost(post));
+      dispatch(createPost({ post, navigate }));
     } catch (error) {
       console.log(error);
     }
   };
-
-  // const isFree = false;
 
   return (
     <div className="post-form">

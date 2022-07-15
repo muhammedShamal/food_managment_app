@@ -1,0 +1,36 @@
+.footer {
+  padding: 3rem 6rem 5rem;
+  background-image: url("../../assets/wave.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-container {
+  margin-top: 2rem;
+}
+
+.about p,
+.contact p,
+.leagal p,
+.social-links p {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.about span,
+.contact span,
+.leagal span {
+  cursor: pointer;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.social-icons:not(:last-child) {
+  margin-right: 1rem;
+}

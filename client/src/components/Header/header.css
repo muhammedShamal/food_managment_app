@@ -1,0 +1,14 @@
+.header {
+  height: 70vh;
+  padding: 1rem 6rem;
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 3rem;
+  text-align: center;
+}

@@ -1,12 +1,18 @@
 .food-card {
   padding: 1rem;
-  width: 300px;
-  height: 180px;
+  width: 320px;
+  /* height: 200px; */
   line-height: 1.8;
   margin-bottom: 3rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+}
+
+.food-card button {
+  margin-top: 0.5rem;
+  background-color: cadetblue;
+  color: #fff;
 }
 
 .food-card span {

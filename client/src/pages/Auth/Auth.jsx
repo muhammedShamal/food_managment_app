@@ -1,32 +1,35 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signup, signin } from "../../actions/auth";
+import { login, register } from "../../redux/features/authSlice";
+
 import "./auth.css";
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
-
 export default function Auth() {
-  const [isSignup, setIsSignup] = useState(false);
-  const [formData, setFormData] = useState(initialState);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // custome userpic
-  // https://avatars.dicebear.com/api/initials/happy.svg
+  const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const { name, email, password, confirmPassword } = formData;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignup) {
-      dispatch(signup(formData, navigate));
+      if (password !== confirmPassword) {
+        return alert("password doesnot match");
+      }
+      const userData = { name, email, password };
+      dispatch(register({ userData, navigate }));
     } else {
-      dispatch(signin(formData, navigate));
+      const userData = { email, password };
+      dispatch(login({ userData, navigate }));
     }
   };
 
@@ -47,19 +50,12 @@ export default function Auth() {
           {isSignup && (
             <>
               <input
-                name="firstName"
+                name="name"
                 className="input"
-                placeholder="First Name"
+                placeholder="Name"
                 type="text"
                 onChange={handleChange}
                 autoFocus
-              />
-              <input
-                name="lastName"
-                className="input"
-                placeholder="Last Name"
-                type="text"
-                onChange={handleChange}
               />
             </>
           )}
@@ -96,7 +92,7 @@ export default function Auth() {
             : "Dont't have an account? Sign Up"}
         </button>
       </div>
-      <footer className="footer">
+      <footer className="auth-footer">
         <h3>Login as admin</h3>
       </footer>
     </div>

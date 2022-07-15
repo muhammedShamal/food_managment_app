@@ -1,9 +1,13 @@
 .home {
+}
+
+.home-main {
   padding: 1.5rem 4rem;
 }
 
 .home-container {
   padding-top: 1rem;
+  flex-wrap: wrap;
   width: 100%;
 }
 

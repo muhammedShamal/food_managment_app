@@ -1,31 +1,32 @@
 import mongoose from "mongoose";
 
-const postSchema = mongoose.Schema(
+const orderSchema = mongoose.Schema(
   {
     userId: {
       type: String,
       required: true,
     },
-    name: {
+    foodId: {
       type: String,
       required: true,
     },
     price: {
       type: Number,
-      required: true,
     },
     quantity: {
       type: Number,
-      required: true,
     },
-    location: {
+    address: {
       type: String,
       required: true,
+    },
+    status: {
+      type: String,
     },
   },
   { timestamps: true }
 );
 
-var Posts = mongoose.model("Posts", postSchema);
+var Orders = mongoose.model("Orders", orderSchema);
 
-export default Posts;
+export default Orders;
