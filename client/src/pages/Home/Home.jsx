@@ -5,17 +5,22 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../../redux/features/postSlice";
 import "./home.css";
+import Services from "../../components/Services/Services";
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  // retriving post from redux store
   const { posts, loading } = useSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(getPosts());
+    dispatch(getPosts()); // getPost function sends a request to our backend and it fetches the details of posts and sends the result as an object
+    // example of object in javascript { name: 'Biriyani', price: '100', location: 'Wayanad' }
   }, []);
   return (
     <div className="home">
       <Header />
+      <Services />
       <div className="home-main">
         <h1>Available Foods</h1>
         <div className="home-container df jc-sb">
@@ -25,42 +30,6 @@ const Home = () => {
                 <FoodCard food={food} />
               </div>
             ))}
-          {/* <div className="home-container">
-            <h3>Free</h3>
-            <div className="df home-left">
-              {!posts ? (
-                <></>
-              ) : (
-                posts
-                  .filter((el) => {
-                    return el.price === 0;
-                  })
-                  .map((food) => (
-                    <div key={food.name}>
-                      <FoodCard food={food} />
-                    </div>
-                  ))
-              )}
-            </div>
-          </div>
-          <div className="home-container df fd-c">
-            <h3>Paid</h3>
-            <div className="df home-right">
-              {!posts ? (
-                <></>
-              ) : (
-                posts
-                  .filter((el) => {
-                    return el.price > 0;
-                  })
-                  .map((food) => (
-                    <div key={food.name}>
-                      <FoodCard food={food} />
-                    </div>
-                  ))
-              )}
-            </div>
-          </div> */}
         </div>
       </div>
       <Footer />
@@ -69,11 +38,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// {
-//   data.map((food) => (
-//     <div key={food.name}>
-//       <FoodCard food={food} />
-//     </div>
-//   ));
-// }

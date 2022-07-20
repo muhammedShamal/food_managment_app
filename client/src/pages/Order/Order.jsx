@@ -7,8 +7,10 @@ import "./order.css";
 
 const Order = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
+  // to get the id from url parameters eg: http://localhost:5000/user/82935965941993526, then the id will be = 82935965941993526
   const { id } = useParams();
   const dispatch = useDispatch();
+  // data needed to create an order
   const [order, setOrder] = useState({
     userId: user.result._id,
     foodId: id,
@@ -17,12 +19,13 @@ const Order = () => {
     address: "",
     status: "Order Conformed",
   });
+  // retrive posts from redux store
   const { posts, loading } = useSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(getPost(id));
+    dispatch(getPost(id)); // function to get a specific post from database
   }, []);
-  if (loading) return <Loading />;
+  if (loading) return <Loading />; // wait until the data is loaded
   return (
     <div className="df fd-c aic">
       <div className="order df fd-c aic jcc bd br-0 shadow-0">

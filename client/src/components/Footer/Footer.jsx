@@ -10,11 +10,11 @@ const Footer = () => {
   return (
     <footer className="footer df fd-c">
       <div className="df ai-c jc-sb">
-        <h1>Food</h1>
+        <h1>ShareNeed</h1>
       </div>
       <div className="footer-container df jc-sb">
         <div className="about df fd-c">
-          <p>ABOUT FOOD</p>
+          <p>ABOUT SHARENEED</p>
           <span>Our blog</span>
           <span>Career</span>
           <span>Inverstor Relations</span>

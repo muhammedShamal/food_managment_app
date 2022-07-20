@@ -2,14 +2,15 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, register } from "../../redux/features/authSlice";
-
 import "./auth.css";
 
 export default function Auth() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // to toggle between signin or signup
   const [isSignup, setIsSignup] = useState(false);
+  // details we need to collect from a user in order to authenticate
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,17 +27,19 @@ export default function Auth() {
         return alert("password doesnot match");
       }
       const userData = { name, email, password };
-      dispatch(register({ userData, navigate }));
+      dispatch(register({ userData, navigate })); // function to post a request to server with name, email and password to create a new user, the server will then create a user with the above deatils in database
     } else {
       const userData = { email, password };
-      dispatch(login({ userData, navigate }));
+      dispatch(login({ userData, navigate })); // function to post a request to server with email and password to login the user
     }
   };
 
+  // set input to its value
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // toggle between signup and signin
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
   };
@@ -92,9 +95,6 @@ export default function Auth() {
             : "Dont't have an account? Sign Up"}
         </button>
       </div>
-      <footer className="auth-footer">
-        <h3>Login as admin</h3>
-      </footer>
     </div>
   );
 }

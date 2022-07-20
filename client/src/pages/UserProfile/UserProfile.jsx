@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./userProfile.css";
 
 const UserProfile = () => {
+  // retrive user from localstorage
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   return (

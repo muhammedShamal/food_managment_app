@@ -6,9 +6,33 @@
 .header-left,
 .header-right {
   flex: 1;
+  height: 100%;
 }
 
 .header h1 {
   font-size: 3rem;
   text-align: center;
+  animation: fade-in 0.3s ease-in;
+}
+
+.header-bg {
+  animation: slide-right 0.7s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(800px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

@@ -6,9 +6,10 @@ import "./postForm.css";
 
 const PostForm = () => {
   const navigate = useNavigate();
+  // retrive user from localstorage
   const user = JSON.parse(localStorage.getItem("profile"));
-  console.log(user.result._id);
 
+  // data needed for creating a post
   const [post, setPost] = useState({
     userId: user.result._id,
     name: "",
@@ -22,7 +23,7 @@ const PostForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(createPost({ post, navigate }));
+      dispatch(createPost({ post, navigate })); // function to create a post with data of the post will create a post in database and navigate  the page to homepage
     } catch (error) {
       console.log(error);
     }

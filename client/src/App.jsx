@@ -8,6 +8,8 @@ import PostForm from "./pages/PostForm/PostForm";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import "./styles.css";
 
+// you can have a look on all the components(like <Navbar/>, <Header/>) in components folder and pages(<Home/>, <Auth/>) in pages folder
+
 function App() {
   return (
     <div className="App">
@@ -27,7 +29,3 @@ function App() {
 }
 
 export default App;
-
-// TODO
-// quantity
-// address
