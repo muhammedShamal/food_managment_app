@@ -9,6 +9,33 @@
   height: 100%;
 }
 
+.header-form {
+  width: 100%;
+}
+
+.header-left > div {
+  padding: 0 0.2rem;
+  margin-top: 1rem;
+  width: 80%;
+}
+
+.header-input {
+  border: 1px solid cadetblue;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.header-btn {
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: cadetblue;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+}
+
 .header h1 {
   font-size: 3rem;
   text-align: center;

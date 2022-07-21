@@ -48,12 +48,26 @@ const PostForm = () => {
             type="text"
             placeholder="Quantity"
           />
-          <input
+          <label>District</label>
+          <select
+            name="districts"
             onChange={(e) => setPost({ ...post, location: e.target.value })}
-            className="input"
-            type="text"
-            placeholder="Location"
-          />
+          >
+            <option value="Kasargod">Kasargod</option>
+            <option value="Kannur">Kannur</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Palakkad">Palakkad</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Ernakulam">Ernakulam</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Trivandrum">Trivandrum</option>
+          </select>
           <input
             onChange={(e) =>
               setPost({ ...post, price: parseInt(e.target.value) })

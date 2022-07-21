@@ -1,5 +1,16 @@
 .service-card {
   text-align: center;
-  padding: 1rem;
-  width: 400px;
+}
+
+.service-card > div {
+  flex: 1;
+}
+
+.service-card img {
+  width: 80%;
+}
+
+.service-card-content {
+  margin-top: 4rem;
+  padding: 2rem 6rem;
 }

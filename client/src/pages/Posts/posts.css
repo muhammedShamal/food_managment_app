@@ -1,0 +1,13 @@
+.posts-main {
+  padding: 1.5rem 6rem;
+}
+
+.posts-container {
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.posts-container h3 {
+  text-align: center;
+}

@@ -11,3 +11,13 @@
 .form-container button {
   background-color: cadetblue;
 }
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid cadetblue;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+  background-color: white;
+}

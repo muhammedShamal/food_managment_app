@@ -19,6 +19,7 @@ export const signUp = (formData) => API.post("/users/signup", formData);
 export const createPost = (formData) => API.post("/posts", formData);
 export const getPosts = () => API.get("/posts");
 export const getPost = (id) => API.get(`/posts/${id}`);
+export const getPostOfLocation = (loc) => API.get(`/posts/district`, loc);
 
 // ORDER
 export const createOrder = (formData) => API.post("/order", formData);

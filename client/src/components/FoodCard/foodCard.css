@@ -1,9 +1,9 @@
 .food-card {
   padding: 1rem;
   width: 320px;
-  /* height: 200px; */
   line-height: 1.8;
   margin-bottom: 3rem;
+  margin-right: 3rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -20,5 +20,5 @@
 }
 
 .food-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.1);
 }

@@ -31,4 +31,14 @@ export const getPost = async (req, res) => {
   }
 };
 
+export const getPostsOfLocation = async (req, res) => {
+  try {
+    const { location } = req.body;
+    const posts = await Posts.find({ location: location });
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 export default router;

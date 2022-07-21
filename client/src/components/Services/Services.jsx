@@ -6,10 +6,11 @@ const Services = () => {
   return (
     <div className="services">
       <h1>Our Services</h1>
-      <div className="df aic jc-sb">
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
+      <div className="df fd-c">
+        <ServiceCard left={true} />
+        <ServiceCard left={false} />
+        <ServiceCard left={true} />
+        <ServiceCard left={false} />
       </div>
     </div>
   );
