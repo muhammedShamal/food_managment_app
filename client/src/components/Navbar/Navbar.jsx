@@ -48,11 +48,11 @@ const Navbar = () => {
               to={`/user/${userProfile?.result?._id || res.user._id}`}
             >
               {/* this button is only visible if we login or there exist a user  */}
-              <CgProfile className="profile mr-1" />
+              <CgProfile className="profile" />
             </Link>
           </>
         ) : (
-          <Link className="link mr-1" to="/auth">
+          <Link className="link" to="/auth">
             {/* this button is only visible when there is no user  */}
             <button className="btn">Sign In</button>
           </Link>

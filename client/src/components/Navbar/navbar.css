@@ -1,6 +1,5 @@
 .navbar {
   padding: 1rem 6rem;
-  /* min-height: 10vh; */
   background: transparent;
   position: relative;
   z-index: 10;
@@ -14,6 +13,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  margin-left: 1rem;
 }
 
 .user-pic {

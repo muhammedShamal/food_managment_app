@@ -7,7 +7,7 @@ const ServiceCard = ({ left, info }) => {
     <div className="service-card df">
       {left && (
         <div>
-          <img src={foodImg} alt="" />
+          <img src={foodImg} alt="h" />
         </div>
       )}
       <div className="service-card-content">
@@ -21,7 +21,7 @@ const ServiceCard = ({ left, info }) => {
       </div>
       {!left && (
         <div>
-          <img src={foodImg} alt="" />
+          <img src={foodImg} alt="h" />
         </div>
       )}
     </div>
