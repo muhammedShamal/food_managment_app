@@ -43,7 +43,8 @@ const Header = () => {
             </select>
             <Link className="link" to={`/posts/${district}`}>
               <button className="header-btn df aic jc-sb br-0 shadow-0">
-                Find Food <BsArrowRight />
+                Find Food
+                <BsArrowRight />
               </button>
             </Link>
           </form>
