@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import bg from "../../assets/headerbg.png";
+import foodImg from "../../assets/notwaste.png";
 import "./header.css";
 
 const Header = () => {
   const [district, setDistrict] = useState("kasargod");
   return (
     <header className="header df aic jcc">
+      <div className="header-bg-img"></div>
       <div className="header-left df aic fd-c jcc">
         <h1>
           There is food for everyone on this planet,
           <br /> but not everyone eats.
         </h1>
         <div className="br-0 shadow-0 df">
-          <form className="header-form df aic jc-sb">
+          <form className="header-form df aic">
             <select
               style={{
                 marginBottom: 0,
@@ -49,7 +50,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header-right df aic jcc">
-        <img className="header-bg" src={bg} alt="" />
+        <img className="header-bg" src={foodImg} alt="" />
       </div>
     </header>
   );

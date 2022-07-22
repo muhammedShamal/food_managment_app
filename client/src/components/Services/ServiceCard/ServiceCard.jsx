@@ -1,7 +1,8 @@
 import foodImg from "../../../assets/notwaste.jpg";
 import "./serviceCard.css";
 
-const ServiceCard = ({ left }) => {
+const ServiceCard = ({ left, info }) => {
+  const data = info;
   return (
     <div className="service-card df">
       {left && (
@@ -10,7 +11,7 @@ const ServiceCard = ({ left }) => {
         </div>
       )}
       <div className="service-card-content">
-        <h1>Lorem</h1>
+        <h1>{data?.title}</h1>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, illo
           enim possimus asperiores dicta aliquam? Eaque itaque maiores cumque a

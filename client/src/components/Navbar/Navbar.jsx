@@ -43,7 +43,10 @@ const Navbar = () => {
                 Logout
               </button>
             </Link>
-            <Link className="link" to={`/user/${userProfile.result?._id}`}>
+            <Link
+              className="link"
+              to={`/user/${userProfile?.result?._id || res.user._id}`}
+            >
               {/* this button is only visible if we login or there exist a user  */}
               <CgProfile className="profile mr-1" />
             </Link>

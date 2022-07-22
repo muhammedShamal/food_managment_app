@@ -9,7 +9,7 @@ export const login = createAsyncThunk(
       navigate("/");
       return response.data;
     } catch (err) {
-      return rejectWithValue(err.response.data);
+      console.log(err);
     }
   }
 );
