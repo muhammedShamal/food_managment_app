@@ -5,6 +5,10 @@
   z-index: 10;
 }
 
+.navbar img {
+  height: 50px;
+}
+
 .nav-links .btn:hover {
   transform: translateY(-7px);
 }

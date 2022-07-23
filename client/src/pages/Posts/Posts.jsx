@@ -21,13 +21,14 @@ const Posts = () => {
       <div className="posts-main">
         <h1>Available Foods</h1>
         <div className="posts-container df">
-          {posts
-            .filter((item) => item.location.toLowerCase() === slug)
-            .map((food) => (
-              <div key={food._id}>
-                <FoodCard food={food} />
-              </div>
-            ))}
+          {posts.length > 0 &&
+            posts
+              .filter((item) => item.location.toLowerCase() === slug)
+              .map((food) => (
+                <div key={food._id}>
+                  <FoodCard food={food} />
+                </div>
+              ))}
         </div>
       </div>
     </div>

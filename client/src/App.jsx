@@ -17,6 +17,9 @@ import "./styles.css";
 // you can have a look on all the components(like <Navbar/>, <Header/>) in components folder and pages(<Home/>, <Auth/>) in pages folder
 
 function App() {
+  const user = JSON.parse(localStorage.getItem("profile"));
+  console.log(user);
+
   return (
     <div className="App">
       <Router>
@@ -27,8 +30,17 @@ function App() {
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/post" element={<PostForm />}></Route>
-          <Route path="/user/:id" element={<UserProfile />}></Route>
-          <Route path="/order/:id" element={<Order />}></Route>
+          {user ? (
+            <Route path="/user/:id" element={<UserProfile />}></Route>
+          ) : (
+            <Route path="/auth" element={<Auth />}></Route>
+          )}
+
+          {user ? (
+            <Route path="/order/:id" element={<Order />}></Route>
+          ) : (
+            <Route path="/auth" element={<Auth />}></Route>
+          )}
         </Routes>
       </Router>
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import logo from "../../assets/logo.jpg";
 import { setLogout, setUser } from "../../redux/features/authSlice";
 import "./navbar.css";
 
@@ -27,7 +28,8 @@ const Navbar = () => {
   return (
     <div className="navbar df aic jc-sb">
       <div className="logo">
-        <Link className="link" to="/">
+        <Link className="link df aic jcc" to="/">
+          <img className="" src={logo} alt="" />
           <h1>ShareNeed</h1>
         </Link>
       </div>

@@ -12,7 +12,7 @@ const Order = () => {
   const dispatch = useDispatch();
   // data needed to create an order
   const [order, setOrder] = useState({
-    userId: user.result._id,
+    userId: user?.result?._id,
     foodId: id,
     price: "",
     quantity: "",
