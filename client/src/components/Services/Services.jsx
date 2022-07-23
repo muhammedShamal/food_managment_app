@@ -14,11 +14,11 @@ const Services = () => {
     },
     {
       title: "How Do We Do",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, vitae ratione? Maxime aliquam obcaecati sequi sit iste suscipit sint quisquam a laudantium illo. Recusandae laborum obcaecati blanditiis cupiditate assumenda neque.",
+      desc: "Registered user's can be both donors or sellers and recipients or consumers according to their needs. Food providers share their food for free or lesser rate of their availability. There is the option to specify the name, quantity, and price of the food. Available food is displayed on the user screen and consumers can order food from there. Consumers can pay the bill cash on delivery.",
       img: how,
     },
     {
-      title: "Why We",
+      title: "Why Us",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, vitae ratione? Maxime aliquam obcaecati sequi sit iste suscipit sint quisquam a laudantium illo. Recusandae laborum obcaecati blanditiis cupiditate assumenda neque.",
       img: logo,
     },

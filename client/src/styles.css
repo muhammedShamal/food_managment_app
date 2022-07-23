@@ -119,6 +119,10 @@ select {
     justify-content: space-between;
   }
 
+  .navbar img {
+    height: 25px;
+  }
+
   .navbar h1 {
     font-size: 1rem;
   }
@@ -135,12 +139,8 @@ select {
     margin-bottom: -13rem;
   }
 
-  .header-bg-img {
-    /* display: none; */
-  }
-
   .header img {
-    width: 100%;
+    height: 15rem;
   }
 
   .header h1 {
@@ -215,6 +215,10 @@ select {
     font-size: 1rem;
   }
 
+  .footer img {
+    width: 25px;
+  }
+
   .footer-container p,
   .footer-container span {
     font-size: 0.4rem;
@@ -222,5 +226,35 @@ select {
 
   .social-icons {
     font-size: 0.7rem;
+  }
+
+  /* posts */
+  .posts-main {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .posts-main h1 {
+    font-size: 1rem;
+  }
+
+  .posts-container {
+    text-align: left;
+    flex-direction: column;
+  }
+
+  /* food-card */
+
+  .food-card {
+    width: 100%;
+  }
+
+  .food-card span {
+    font-size: 0.7rem;
+  }
+
+  .food-card button {
+    padding: 0.3rem;
+    font-size: 0.6rem;
   }
 }

@@ -1,15 +1,17 @@
-import "./footer.css";
 import {
   AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import logo from "../../assets/logo.jpg";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer df fd-c">
-      <div className="df ai-c jc-sb">
+      <div className="df aic">
+        <img src={logo} alt="" />
         <h1>ShareNeed</h1>
       </div>
       <div className="footer-container df jc-sb">

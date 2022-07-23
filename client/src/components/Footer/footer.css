@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.footer img {
+  width: 60px;
+}
+
 .footer-container {
   margin-top: 2rem;
 }
