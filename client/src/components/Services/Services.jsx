@@ -9,7 +9,7 @@ const Services = () => {
   const data = [
     {
       title: "What Do We Do",
-      desc: "We are providing this platform to help those who are searching for a way to handle their excess food and are looking for affordable or free food. Connect these people through ShareNeed and make their life a little bit easier.",
+      desc: "We are providing this platform to help those who are searching for a way to handle their excess food and are looking for affordable or free food. Connect these people through ShareNeed and make their life a little bit easier and show them a little kindness.",
       img: what,
     },
     {
@@ -19,7 +19,7 @@ const Services = () => {
     },
     {
       title: "Why Us",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, vitae ratione? Maxime aliquam obcaecati sequi sit iste suscipit sint quisquam a laudantium illo. Recusandae laborum obcaecati blanditiis cupiditate assumenda neque.",
+      desc: "We want to help those who are struggling to find a meal and fighting hunger. If you have excess food and don't know what to do, don't throw it away. Many hungry stomachs are waiting for food. You can help them with us. Show them some kindness. Your little kindness means a lot for them. There are 100+ donors and consumers in shareNeed. Join ShareNeed and be one of us.",
       img: logo,
     },
   ];
