@@ -57,7 +57,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="link"
-              to={`/user/${userProfile?.result?._id || res?.user?._id}`}
+              to={`/user/${userProfile?.result?._id || res?.user?.result?._id}`}
             >
               {/* this button is only visible if we login or there exist a user  */}
               <CgProfile className="profile" />
