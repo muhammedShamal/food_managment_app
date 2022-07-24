@@ -1,8 +1,10 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://pure-harbor-77871.herokuapp.com/",
+  baseURL: "http://localhost:8000/",
 });
+
+// https://pure-harbor-77871.herokuapp.com/
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
@@ -24,5 +26,5 @@ export const getPost = (id) => API.get(`/posts/${id}`);
 export const getPostOfLocation = (loc) => API.get(`/posts/district`, loc);
 
 // ORDER
-export const createOrder = (formData) => API.post("/order", formData);
-export const getOrders = () => API.get("/order");
+export const createOrder = (order) => API.post("/orders", order);
+export const getOrders = () => API.get("/orders");

@@ -128,7 +128,7 @@ select {
   }
 
   .navbar button {
-    padding: 0.5rem;
+    padding: 0.2rem;
     font-size: 0.7rem;
   }
 
@@ -141,6 +141,7 @@ select {
 
   .header img {
     height: 15rem;
+    margin-bottom: 2rem;
   }
 
   .header h1 {
@@ -148,7 +149,7 @@ select {
   }
 
   .header-left {
-    margin-top: -14rem;
+    margin-top: -13rem;
   }
 
   .header-left > div {

@@ -3,11 +3,19 @@ import * as api from "../api";
 
 export const createOrder = createAsyncThunk(
   "order/createOrder",
-  async ({ formValue, navigate }) => {
+  async ({ order, navigate, toast }) => {
     try {
-      const { data } = await api.createOrder(formValue);
+      const { data } = await api.createOrder(order);
       navigate("/");
-      console.log(data);
+      toast("Order Placed Successfully 🥳", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return data;
     } catch (error) {
       console.log(error);
@@ -27,7 +35,7 @@ export const getOrders = createAsyncThunk("order/getOrders", async () => {
 const orderSlice = createSlice({
   name: "order",
   initialState: {
-    order: [],
+    orders: [],
     error: "",
     loading: false,
   },
@@ -37,7 +45,7 @@ const orderSlice = createSlice({
     },
     [createOrder.fulfilled]: (state, action) => {
       state.loading = false;
-      state.order = [...state.order, action.payload];
+      state.orders = [...state.orders, action.payload];
     },
     [createOrder.rejected]: (state, action) => {
       state.loading = false;
@@ -48,7 +56,7 @@ const orderSlice = createSlice({
     },
     [getOrders.fulfilled]: (state, action) => {
       state.loading = false;
-      state.order = action.payload;
+      state.orders = action.payload;
     },
     [getOrders.rejected]: (state, action) => {
       state.loading = false;
@@ -57,4 +65,4 @@ const orderSlice = createSlice({
   },
 });
 
-export default postSlice.reducer;
+export default orderSlice.reducer;

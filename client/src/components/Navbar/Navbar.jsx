@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { CgProfile } from "react-icons/cg";
 import logo from "../../assets/logo.jpg";
 import { setLogout, setUser } from "../../redux/features/authSlice";
@@ -23,6 +24,15 @@ const Navbar = () => {
     dispatch(setLogout());
     dispatch(setUser(null));
     window.location.reload();
+    toast("Logged Out", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (

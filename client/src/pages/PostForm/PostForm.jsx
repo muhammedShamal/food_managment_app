@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { createPost } from "../../redux/features/postSlice";
 import "./postForm.css";
 
@@ -23,7 +24,7 @@ const PostForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(createPost({ post, navigate })); // function to create a post with data of the post will create a post in database and navigate  the page to homepage
+      dispatch(createPost({ post, navigate, toast })); // function to create a post with data of the post will create a post in database and navigate  the page to homepage
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +47,7 @@ const PostForm = () => {
             }
             className="input"
             type="text"
-            placeholder="Quantity"
+            placeholder="Quantity in Kg"
           />
           <label>District</label>
           <select
@@ -74,7 +75,7 @@ const PostForm = () => {
             }
             className="input"
             type="text"
-            placeholder="Price"
+            placeholder="Price in Rs"
           />
           <button onClick={handleSubmit} type="submit" className="btn">
             Share

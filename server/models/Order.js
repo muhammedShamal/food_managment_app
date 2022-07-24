@@ -12,9 +12,11 @@ const orderSchema = mongoose.Schema(
     },
     price: {
       type: Number,
+      default: 0,
     },
     quantity: {
       type: Number,
+      required: true,
     },
     address: {
       type: String,
@@ -27,6 +29,6 @@ const orderSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-var Orders = mongoose.model("Orders", orderSchema);
+const Orders = mongoose.model("Orders", orderSchema);
 
 export default Orders;

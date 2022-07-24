@@ -4,6 +4,8 @@ import {
   Route,
   useParams,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./pages/About/About";
 import Auth from "./pages/Auth/Auth";
@@ -42,6 +44,17 @@ function App() {
             <Route path="/auth" element={<Auth />}></Route>
           )}
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Router>
     </div>
   );

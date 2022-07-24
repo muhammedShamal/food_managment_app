@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 app.use("/users", userRoute);
 app.use("/posts", postRoute);
-app.use("/order", orderRoute);
+app.use("/orders", orderRoute);
 
 const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT;

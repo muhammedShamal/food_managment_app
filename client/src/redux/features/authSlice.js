@@ -3,10 +3,19 @@ import * as api from "../api";
 
 export const login = createAsyncThunk(
   "auth/login",
-  async ({ userData, navigate }, { rejectWithValue }) => {
+  async ({ userData, navigate, toast }, { rejectWithValue }) => {
     try {
       const response = await api.signIn(userData);
       navigate("/");
+      toast("Logged in successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return response.data;
     } catch (err) {
       console.log(err);
@@ -20,6 +29,15 @@ export const register = createAsyncThunk(
     try {
       const response = await api.signUp(userData);
       navigate("/");
+      toast("Account registered successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);

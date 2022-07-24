@@ -3,9 +3,18 @@ import * as api from "../api";
 
 export const createPost = createAsyncThunk(
   "posts/createPost",
-  async ({ post, navigate }) => {
+  async ({ post, navigate, toast }) => {
     try {
       const { data } = await api.createPost(post);
+      toast("Food added successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       navigate("/");
       return data;
     } catch (error) {

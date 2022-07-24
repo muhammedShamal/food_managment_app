@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { login, register } from "../../redux/features/authSlice";
 import "./auth.css";
 
@@ -27,10 +28,10 @@ export default function Auth() {
         return alert("password doesnot match");
       }
       const userData = { name, email, password };
-      dispatch(register({ userData, navigate })); // function to post a request to server with name, email and password to create a new user, the server will then create a user with the above deatils in database
+      dispatch(register({ userData, navigate, toast })); // function to post a request to server with name, email and password to create a new user, the server will then create a user with the above deatils in database
     } else {
       const userData = { email, password };
-      dispatch(login({ userData, navigate })); // function to post a request to server with email and password to login the user
+      dispatch(login({ userData, navigate, toast })); // function to post a request to server with email and password to login the user
     }
   };
 
