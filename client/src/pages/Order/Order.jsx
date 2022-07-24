@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../components/Loading/Loading";
 import { createOrder } from "../../redux/features/orderSlice";
-import { getPost } from "../../redux/features/postSlice";
+import { getPost, updatedPost } from "../../redux/features/postSlice";
 import "./order.css";
 
 const Order = () => {
@@ -22,12 +22,14 @@ const Order = () => {
     address: "",
     status: "Order Conformed",
   });
+  console.log(id);
+
   // retrive posts from redux store
   const { posts, loading } = useSelector((state) => state.posts);
-
   useEffect(() => {
     dispatch(getPost(id)); // function to get a specific post from database
-  }, []);
+  }, [dispatch]);
+  const [quantity, setQuantity] = useState(0);
 
   const handleSubmit = () => {
     if (order.quantity > posts.quantity) {
@@ -41,6 +43,7 @@ const Order = () => {
         progress: undefined,
       });
     } else {
+      dispatch(updatedPost({ id, quantity }));
       dispatch(createOrder({ order, navigate, toast }));
     }
   };
@@ -54,9 +57,10 @@ const Order = () => {
           className="input"
           type="Number"
           placeholder={`Quantity Max : ${posts?.quantity} Kg`}
-          onChange={(e) =>
-            setOrder({ ...order, quantity: parseInt(e.target.value) })
-          }
+          onChange={(e) => {
+            setOrder({ ...order, quantity: parseInt(e.target.value) });
+            setQuantity(posts?.quantity - parseInt(e.target.value));
+          }}
         />
         <span className="mb-1">
           Price : Rs.

@@ -41,6 +41,18 @@ export const getPost = createAsyncThunk("posts/getPost", async (id) => {
   }
 });
 
+export const updatedPost = createAsyncThunk(
+  "posts/updatePOst",
+  async ({ id, quantity }) => {
+    try {
+      const { data } = await api.updatePost(id, { quantity: quantity });
+      return data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
 export const getPostOfLocation = createAsyncThunk(
   "posts/getPostOfLocation",
   async (loc) => {
@@ -103,6 +115,17 @@ const postSlice = createSlice({
       state.posts = action.payload;
     },
     [getPostOfLocation.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [updatedPost.pending]: (state) => {
+      state.loading = true;
+    },
+    [updatedPost.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.posts = action.payload;
+    },
+    [updatedPost.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
