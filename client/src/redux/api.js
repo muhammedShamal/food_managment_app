@@ -1,10 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "https://pure-harbor-77871.herokuapp.com/",
 });
-
-// https://pure-harbor-77871.herokuapp.com/
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
