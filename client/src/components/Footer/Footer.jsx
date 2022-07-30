@@ -15,7 +15,7 @@ const Footer = () => {
         <h1>ShareNeed</h1>
       </div>
       <div className="footer-container df jc-sb">
-        <div className="about df fd-c">
+        <div className="footer-about df fd-c">
           <p>ABOUT SHARENEED</p>
           <span>Our blog</span>
           <span>Career</span>

@@ -17,6 +17,7 @@ const PostForm = () => {
     price: 0,
     quantity: 0,
     location: "",
+    district: "",
   });
 
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ const PostForm = () => {
           <label>District</label>
           <select
             name="districts"
-            onChange={(e) => setPost({ ...post, location: e.target.value })}
+            onChange={(e) => setPost({ ...post, district: e.target.value })}
           >
             <option value="Kasargod">Kasargod</option>
             <option value="Kannur">Kannur</option>

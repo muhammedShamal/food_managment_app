@@ -4,7 +4,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../components/Loading/Loading";
 import { createOrder } from "../../redux/features/orderSlice";
-import { getPost, updatedPost } from "../../redux/features/postSlice";
+import {
+  getPost,
+  removePost,
+  updatedPost,
+} from "../../redux/features/postSlice";
 import "./order.css";
 
 const Order = () => {
@@ -22,7 +26,6 @@ const Order = () => {
     address: "",
     status: "Order Conformed",
   });
-  console.log(id);
 
   // retrive posts from redux store
   const { posts, loading } = useSelector((state) => state.posts);
@@ -45,6 +48,7 @@ const Order = () => {
     } else {
       dispatch(updatedPost({ id, quantity }));
       dispatch(createOrder({ order, navigate, toast }));
+      order.quantity === posts.quantity && dispatch(removePost(posts._id));
     }
   };
 

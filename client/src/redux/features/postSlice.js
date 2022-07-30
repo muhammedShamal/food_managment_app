@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../api";
 
+// create a new post object in database
 export const createPost = createAsyncThunk(
   "posts/createPost",
   async ({ post, navigate, toast }) => {
@@ -23,6 +24,7 @@ export const createPost = createAsyncThunk(
   }
 );
 
+// return all posts from data base
 export const getPosts = createAsyncThunk("posts/getPosts", async () => {
   try {
     const { data } = await api.getPosts();
@@ -32,6 +34,7 @@ export const getPosts = createAsyncThunk("posts/getPosts", async () => {
   }
 });
 
+// return post with a specific id
 export const getPost = createAsyncThunk("posts/getPost", async (id) => {
   try {
     const { data } = await api.getPost(id);
@@ -41,6 +44,7 @@ export const getPost = createAsyncThunk("posts/getPost", async (id) => {
   }
 });
 
+// update post
 export const updatedPost = createAsyncThunk(
   "posts/updatePOst",
   async ({ id, quantity }) => {
@@ -53,15 +57,26 @@ export const updatedPost = createAsyncThunk(
   }
 );
 
-export const getPostOfLocation = createAsyncThunk(
+// delete post from database
+export const removePost = createAsyncThunk("posts/deletePost", async (id) => {
+  try {
+    const { data } = await api.deletePost(id);
+    return data;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const getPostOfDistrict = createAsyncThunk(
   "posts/getPostOfLocation",
-  async (loc) => {
+  async (district) => {
     try {
-      const { data } = await api.getPostOfLocation(loc);
+      console.log(district);
+      const { data } = await api.getPostOfLocation(district);
       console.log(data);
       return data;
     } catch (error) {
-      return error;
+      console.log(error);
     }
   }
 );
@@ -69,8 +84,9 @@ export const getPostOfLocation = createAsyncThunk(
 const postSlice = createSlice({
   name: "posts",
   initialState: {
-    posts: [],
+    posts: [], // redux post array which contains all the posts from database
     error: "",
+    districtPosts: [],
     loading: false,
   },
   extraReducers: {
@@ -107,14 +123,14 @@ const postSlice = createSlice({
       state.loading = false;
       state.error = action.payload.message;
     },
-    [getPostOfLocation.pending]: (state) => {
+    [getPostOfDistrict.pending]: (state) => {
       state.loading = true;
     },
-    [getPostOfLocation.fulfilled]: (state, action) => {
+    [getPostOfDistrict.fulfilled]: (state, action) => {
       state.loading = false;
-      state.posts = action.payload;
+      state.districtPosts = action.payload;
     },
-    [getPostOfLocation.rejected]: (state, action) => {
+    [getPostOfDistrict.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
@@ -126,6 +142,17 @@ const postSlice = createSlice({
       state.posts = action.payload;
     },
     [updatedPost.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [removePost.pending]: (state) => {
+      state.loading = true;
+    },
+    [removePost.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.posts = [...posts.filter((post) => post._id !== action.payload)];
+    },
+    [removePost.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },

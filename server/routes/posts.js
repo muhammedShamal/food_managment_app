@@ -3,14 +3,14 @@ import {
   getPosts,
   getPost,
   createPost,
-  getPostsOfLocation,
   updatePost,
   deletePost,
+  getPostsOfDistrict,
 } from "../controllers/posts.js";
 
 const router = express.Router();
 
-router.get("/district", getPostsOfLocation);
+router.get("/district", getPostsOfDistrict);
 router.get("/", getPosts);
 router.get("/:id", getPost);
 router.put("/:id", updatePost);

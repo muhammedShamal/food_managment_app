@@ -4,10 +4,12 @@ const ServiceCard = ({ left, info }) => {
   const data = info;
   return (
     <div className="service-card df">
-      {left && (
+      {left ? (
         <div>
           <img src={data?.img} alt="h" />
         </div>
+      ) : (
+        <></>
       )}
       <div className="service-card-content">
         <h1>{data?.title}</h1>

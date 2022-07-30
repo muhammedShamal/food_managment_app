@@ -18,9 +18,12 @@ const postSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    location: {
+    district: {
       type: String,
       required: true,
+    },
+    location: {
+      type: String,
     },
   },
   { timestamps: true }

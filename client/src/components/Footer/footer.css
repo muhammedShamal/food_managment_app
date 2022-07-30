@@ -14,14 +14,14 @@
   margin-top: 2rem;
 }
 
-.about p,
+.footer-about p,
 .contact p,
 .leagal p,
 .social-links p {
   font-weight: 900;
   font-size: 1.5rem;
 }
-.about span,
+.footer-about span,
 .contact span,
 .leagal span {
   cursor: pointer;

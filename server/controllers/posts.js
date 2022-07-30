@@ -31,16 +31,17 @@ export const getPost = async (req, res) => {
   }
 };
 
-export const getPostsOfLocation = async (req, res) => {
+export const getPostsOfDistrict = async (req, res) => {
   try {
-    const { location } = req.body;
-    const posts = await Posts.find({ location: location });
+    const { district } = req.body;
+    const posts = await Posts.find({ district: district });
     res.status(200).json(posts);
   } catch (error) {
-    res.status(500).json(error);
+    console.log(error);
   }
 };
 
+// update/edit post
 export const updatePost = async (req, res) => {
   try {
     const updatedPost = await Posts.findByIdAndUpdate(
@@ -56,6 +57,7 @@ export const updatePost = async (req, res) => {
   }
 };
 
+// delete post
 export const deletePost = async (req, res) => {
   try {
     await Posts.findByIdAndDelete(req.params.id);

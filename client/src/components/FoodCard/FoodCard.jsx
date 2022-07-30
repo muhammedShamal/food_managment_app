@@ -7,7 +7,7 @@ const FoodCard = ({ food }) => {
   return (
     <div className="food-card df fd-c shadow-0 br-0">
       <span>Food Name : {food.name}</span>
-      <span>Location : {food.location}</span>
+      <span>Location : {food.district}</span>
       <span>Quantity : {food.quantity} Kg</span>
       {food.price === 0 ? (
         <span>Price : Free</span>
