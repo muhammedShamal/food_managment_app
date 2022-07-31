@@ -60,7 +60,7 @@ const Order = () => {
         <input
           className="input"
           type="Number"
-          placeholder={`Quantity Max : ${posts?.quantity} Kg`}
+          placeholder={`Quantity Max : ${posts?.quantity} items`}
           onChange={(e) => {
             setOrder({ ...order, quantity: parseInt(e.target.value) });
             setQuantity(posts?.quantity - parseInt(e.target.value));
