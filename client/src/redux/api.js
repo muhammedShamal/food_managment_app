@@ -2,7 +2,7 @@ import axios from "axios";
 
 // this is our local backend url it connects front-end and backend
 const API = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://pure-harbor-77871.herokuapp.com/",
 });
 /*
   eg
