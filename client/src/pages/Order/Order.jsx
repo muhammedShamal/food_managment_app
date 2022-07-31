@@ -47,7 +47,7 @@ const Order = () => {
       });
     } else {
       dispatch(updatedPost({ id, quantity }));
-      dispatch(createOrder({ order, navigate, toast }));
+      dispatch(createOrder({ order, toast, navigate }));
       order.quantity === posts.quantity && dispatch(removePost(posts._id));
     }
   };
