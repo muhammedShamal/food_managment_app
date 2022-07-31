@@ -3,10 +3,9 @@ import * as api from "../api";
 
 export const createOrder = createAsyncThunk(
   "order/createOrder",
-  async ({ order, navigate, toast }) => {
+  async ({ order, toast, navigate }) => {
     try {
       const { data } = await api.createOrder(order);
-      navigate("/");
       toast("Order Placed Successfully 🥳", {
         position: "top-right",
         autoClose: 5000,
@@ -16,6 +15,7 @@ export const createOrder = createAsyncThunk(
         draggable: true,
         progress: undefined,
       });
+      navigate("/");
       return data;
     } catch (error) {
       console.log(error);
