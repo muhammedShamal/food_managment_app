@@ -6,6 +6,7 @@ export const createOrder = createAsyncThunk(
   async ({ order, toast, navigate }) => {
     try {
       const { data } = await api.createOrder(order);
+      navigate("/");
       toast("Order Placed Successfully 🥳", {
         position: "top-right",
         autoClose: 5000,
@@ -15,7 +16,6 @@ export const createOrder = createAsyncThunk(
         draggable: true,
         progress: undefined,
       });
-      navigate("/");
       return data;
     } catch (error) {
       console.log(error);
