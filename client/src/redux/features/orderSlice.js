@@ -3,7 +3,7 @@ import * as api from "../api";
 
 export const createOrder = createAsyncThunk(
   "order/createOrder",
-  async ({ order, navigate, toast }) => {
+  async ({ order, toast, navigate }) => {
     try {
       const { data } = await api.createOrder(order);
       navigate("/");
