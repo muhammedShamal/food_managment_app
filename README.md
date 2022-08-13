@@ -1,9 +1,53 @@
-
 # Food Management Web App
 
 A 'balance food management' web application build using MERN stack.
 
 Users can create an account and share the extra food through our website, then display the available food at the specific location
+## Installation
+
+#### Example:
+
+You will need `node` and `npm` installed globally on your machine.
+
+Clone down this repository. 
+
+```
+ git clone https://github.com/muhammedShamal/food_managment_app
+```
+change directory to server
+```
+cd server
+```
+Install packages
+```
+npm install
+```
+change directory to client
+```
+cd client
+```
+Install packages
+```
+npm install
+```
+create a .env file (refer .env.example) and add all environmental variables 
+
+to run server
+```
+npm start
+```
+to run client
+```
+npm run dev
+```
+
+To visit App
+```
+http://localhost:3000/
+```
+
+
+    
 ## Screenshots
 
 ### Home
