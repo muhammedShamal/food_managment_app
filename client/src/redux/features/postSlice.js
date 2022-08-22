@@ -71,9 +71,7 @@ export const getPostOfDistrict = createAsyncThunk(
   "posts/getPostOfLocation",
   async (district) => {
     try {
-      console.log(district);
       const { data } = await api.getPostOfLocation(district);
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
@@ -84,7 +82,7 @@ export const getPostOfDistrict = createAsyncThunk(
 const postSlice = createSlice({
   name: "posts",
   initialState: {
-    posts: [], // redux post array which contains all the posts from database
+    posts: [],
     error: "",
     districtPosts: [],
     loading: false,

@@ -1,5 +1,6 @@
 import express from "express";
 import Posts from "../models/Post.js";
+import User from "../models/User.js";
 
 const router = express.Router();
 
@@ -13,10 +14,16 @@ export const getPosts = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const newPost = new Posts(req.body);
   try {
-    await newPost.save();
-    res.status(200).json(newPost);
+    const id = req.body.userId;
+    const user = await User.findById(id);
+    if (user) {
+      const newPost = new Posts(req.body);
+      await newPost.save();
+      res.status(200).json(newPost);
+    } else {
+      res.status(404).json({ message: "user not found" });
+    }
   } catch (error) {
     res.status(409).json(error);
   }

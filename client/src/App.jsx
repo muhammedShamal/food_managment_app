@@ -11,8 +11,6 @@ import Posts from "./pages/Posts/Posts";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import "./styles.css";
 
-// you can have a look on all the components(like <Navbar/>, <Header/>) in components folder and pages(<Home/>, <Auth/>) in pages folder
-
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"));
 

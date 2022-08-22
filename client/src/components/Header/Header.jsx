@@ -41,7 +41,6 @@ const Header = () => {
               <option value="Kollam">Kollam</option>
               <option value="Trivandrum">Trivandrum</option>
             </select>
-            {/* react router link - onClick will goto  -> eg: localhost:3000/posts/kasargod */}
             <Link className="link" to={`/posts/${district}`}>
               <button className="header-btn df aic jc-sb br-0 shadow-0">
                 Find Food
